@@ -1,0 +1,430 @@
+﻿Name,Geography1,All ages
+UNITED KINGDOM,Country,66796807
+GREAT BRITAIN,Country,64903140
+ENGLAND AND WALES,Country,59439840
+ENGLAND,Country,56286961
+NORTH EAST,Region,2669941
+County Durham,Unitary Authority,530094
+Darlington,Unitary Authority,106803
+Hartlepool,Unitary Authority,93663
+Middlesbrough,Unitary Authority,140980
+Northumberland,Unitary Authority,322434
+Redcar and Cleveland,Unitary Authority,137150
+Stockton-on-Tees,Unitary Authority,197348
+Tyne and Wear (Met County),Metropolitan County,1141469
+Gateshead,Metropolitan District,202055
+Newcastle upon Tyne,Metropolitan District,302820
+North Tyneside,Metropolitan District,207913
+South Tyneside,Metropolitan District,150976
+Sunderland,Metropolitan District,277705
+NORTH WEST,Region,7341196
+Blackburn with Darwen,Unitary Authority,149696
+Blackpool,Unitary Authority,139446
+Cheshire East,Unitary Authority,384152
+Cheshire West and Chester,Unitary Authority,343071
+Halton,Unitary Authority,129410
+Warrington,Unitary Authority,210014
+Cumbria,County,500012
+Allerdale,Non-metropolitan District,97761
+Barrow-in-Furness,Non-metropolitan District,67049
+Carlisle,Non-metropolitan District,108678
+Copeland,Non-metropolitan District,68183
+Eden,Non-metropolitan District,53253
+South Lakeland,Non-metropolitan District,105088
+Greater Manchester (Met County),Metropolitan County,2835686
+Bolton,Metropolitan District,287550
+Bury,Metropolitan District,190990
+Manchester,Metropolitan District,552858
+Oldham,Metropolitan District,237110
+Rochdale,Metropolitan District,222412
+Salford,Metropolitan District,258834
+Stockport,Metropolitan District,293423
+Tameside,Metropolitan District,226493
+Trafford,Metropolitan District,237354
+Wigan,Metropolitan District,328662
+Lancashire,County,1219799
+Burnley,Non-metropolitan District,88920
+Chorley,Non-metropolitan District,118216
+Fylde,Non-metropolitan District,80780
+Hyndburn,Non-metropolitan District,81043
+Lancaster,Non-metropolitan District,146038
+Pendle,Non-metropolitan District,92112
+Preston,Non-metropolitan District,143135
+Ribble Valley,Non-metropolitan District,60888
+Rossendale,Non-metropolitan District,71482
+South Ribble,Non-metropolitan District,110788
+West Lancashire,Non-metropolitan District,114306
+Wyre,Non-metropolitan District,112091
+Merseyside (Met County),Metropolitan County,1429910
+Knowsley,Metropolitan District,150862
+Liverpool,Metropolitan District,498042
+Sefton,Metropolitan District,276410
+St. Helens,Metropolitan District,180585
+Wirral,Metropolitan District,324011
+YORKSHIRE AND THE HUMBER,Region,5502967
+East Riding of Yorkshire,Unitary Authority,341173
+"Kingston upon Hull, City of",Unitary Authority,259778
+North East Lincolnshire,Unitary Authority,159563
+North Lincolnshire,Unitary Authority,172292
+York,Unitary Authority,210618
+North Yorkshire,County,618054
+Craven,Non-metropolitan District,57142
+Hambleton,Non-metropolitan District,91594
+Harrogate,Non-metropolitan District,160831
+Richmondshire,Non-metropolitan District,53730
+Ryedale,Non-metropolitan District,55380
+Scarborough,Non-metropolitan District,108757
+Selby,Non-metropolitan District,90620
+South Yorkshire (Met County),Metropolitan County,1409020
+Barnsley,Metropolitan District,246866
+Doncaster,Metropolitan District,311890
+Rotherham,Metropolitan District,265411
+Sheffield,Metropolitan District,584853
+West Yorkshire (Met County),Metropolitan County,2332469
+Bradford,Metropolitan District,539776
+Calderdale,Metropolitan District,211455
+Kirklees,Metropolitan District,439787
+Leeds,Metropolitan District,793139
+Wakefield,Metropolitan District,348312
+EAST MIDLANDS,Region,4835928
+Derby,Unitary Authority,257302
+Leicester,Unitary Authority,354224
+Nottingham,Unitary Authority,332900
+Rutland,Unitary Authority,39927
+Derbyshire,County,802694
+Amber Valley,Non-metropolitan District,128147
+Bolsover,Non-metropolitan District,80562
+Chesterfield,Non-metropolitan District,104900
+Derbyshire Dales,Non-metropolitan District,72325
+Erewash,Non-metropolitan District,115371
+High Peak,Non-metropolitan District,92666
+North East Derbyshire,Non-metropolitan District,101462
+South Derbyshire,Non-metropolitan District,107261
+Leicestershire,County,706155
+Blaby,Non-metropolitan District,101526
+Charnwood,Non-metropolitan District,185851
+Harborough,Non-metropolitan District,93807
+Hinckley and Bosworth,Non-metropolitan District,113136
+Melton,Non-metropolitan District,51209
+North West Leicestershire,Non-metropolitan District,103611
+Oadby and Wigston,Non-metropolitan District,57015
+Lincolnshire,County,761224
+Boston,Non-metropolitan District,70173
+East Lindsey,Non-metropolitan District,141727
+Lincoln,Non-metropolitan District,99299
+North Kesteven,Non-metropolitan District,116915
+South Holland,Non-metropolitan District,95019
+South Kesteven,Non-metropolitan District,142424
+West Lindsey,Non-metropolitan District,95667
+Northamptonshire,County,753278
+Corby,Non-metropolitan District,72218
+Daventry,Non-metropolitan District,85950
+East Northamptonshire,Non-metropolitan District,94527
+Kettering,Non-metropolitan District,101776
+Northampton,Non-metropolitan District,224610
+South Northamptonshire,Non-metropolitan District,94490
+Wellingborough,Non-metropolitan District,79707
+Nottinghamshire,County,828224
+Ashfield,Non-metropolitan District,127918
+Bassetlaw,Non-metropolitan District,117459
+Broxtowe,Non-metropolitan District,114033
+Gedling,Non-metropolitan District,117896
+Mansfield,Non-metropolitan District,109313
+Newark and Sherwood,Non-metropolitan District,122421
+Rushcliffe,Non-metropolitan District,119184
+WEST MIDLANDS,Region,5934037
+"Herefordshire, County of",Unitary Authority,192801
+Shropshire,Unitary Authority,323136
+Stoke-on-Trent,Unitary Authority,256375
+Telford and Wrekin,Unitary Authority,179854
+Staffordshire,County,879560
+Cannock Chase,Non-metropolitan District,100762
+East Staffordshire,Non-metropolitan District,119754
+Lichfield,Non-metropolitan District,104756
+Newcastle-under-Lyme,Non-metropolitan District,129441
+South Staffordshire,Non-metropolitan District,112436
+Stafford,Non-metropolitan District,137280
+Staffordshire Moorlands,Non-metropolitan District,98435
+Tamworth,Non-metropolitan District,76696
+Warwickshire,County,577933
+North Warwickshire,Non-metropolitan District,65264
+Nuneaton and Bedworth,Non-metropolitan District,129883
+Rugby,Non-metropolitan District,108935
+Stratford-on-Avon,Non-metropolitan District,130098
+Warwick,Non-metropolitan District,143753
+West Midlands (Met County),Metropolitan County,2928592
+Birmingham,Metropolitan District,1141816
+Coventry,Metropolitan District,371521
+Dudley,Metropolitan District,321596
+Sandwell,Metropolitan District,328450
+Solihull,Metropolitan District,216374
+Walsall,Metropolitan District,285478
+Wolverhampton,Metropolitan District,263357
+Worcestershire,County,595786
+Bromsgrove,Non-metropolitan District,99881
+Malvern Hills,Non-metropolitan District,78698
+Redditch,Non-metropolitan District,85261
+Worcester,Non-metropolitan District,101222
+Wychavon,Non-metropolitan District,129433
+Wyre Forest,Non-metropolitan District,101291
+EAST,Region,6236072
+Bedford,Unitary Authority,173292
+Central Bedfordshire,Unitary Authority,288648
+Luton,Unitary Authority,213052
+Peterborough,Unitary Authority,202259
+Southend-on-Sea,Unitary Authority,183125
+Thurrock,Unitary Authority,174341
+Cambridgeshire,County,653537
+Cambridge,Non-metropolitan District,124798
+East Cambridgeshire,Non-metropolitan District,89840
+Fenland,Non-metropolitan District,101850
+Huntingdonshire,Non-metropolitan District,177963
+South Cambridgeshire,Non-metropolitan District,159086
+Essex,County,1489189
+Basildon,Non-metropolitan District,187199
+Braintree,Non-metropolitan District,152604
+Brentwood,Non-metropolitan District,77021
+Castle Point,Non-metropolitan District,90376
+Chelmsford,Non-metropolitan District,178388
+Colchester,Non-metropolitan District,194706
+Epping Forest,Non-metropolitan District,131689
+Harlow,Non-metropolitan District,87067
+Maldon,Non-metropolitan District,64926
+Rochford,Non-metropolitan District,87368
+Tendring,Non-metropolitan District,146561
+Uttlesford,Non-metropolitan District,91284
+Hertfordshire,County,1189519
+Broxbourne,Non-metropolitan District,97279
+Dacorum,Non-metropolitan District,154763
+East Hertfordshire,Non-metropolitan District,149748
+Hertsmere,Non-metropolitan District,104919
+North Hertfordshire,Non-metropolitan District,133570
+St Albans,Non-metropolitan District,148452
+Stevenage,Non-metropolitan District,87845
+Three Rivers,Non-metropolitan District,93323
+Watford,Non-metropolitan District,96577
+Welwyn Hatfield,Non-metropolitan District,123043
+Norfolk,County,907760
+Breckland,Non-metropolitan District,139968
+Broadland,Non-metropolitan District,130783
+Great Yarmouth,Non-metropolitan District,99336
+King's Lynn and West Norfolk,Non-metropolitan District,151383
+North Norfolk,Non-metropolitan District,104837
+Norwich,Non-metropolitan District,140573
+South Norfolk,Non-metropolitan District,140880
+Suffolk,County,761350
+Babergh,Non-metropolitan District,92036
+East Suffolk,Non-metropolitan District,249461
+Ipswich,Non-metropolitan District,136913
+Mid Suffolk,Non-metropolitan District,103895
+West Suffolk,Non-metropolitan District,179045
+LONDON,Region,8961989
+Camden,London Borough,270029
+City of London,London Borough,9721
+Hackney and City of London,London Borough,290841
+Hammersmith and Fulham,London Borough,185143
+Haringey,London Borough,268647
+Islington,London Borough,242467
+Kensington and Chelsea,London Borough,156129
+Lambeth,London Borough,326034
+Lewisham,London Borough,305842
+Newham,London Borough,353134
+Southwark,London Borough,318830
+Tower Hamlets,London Borough,324745
+Wandsworth,London Borough,329677
+Westminster,London Borough,261317
+Barking and Dagenham,London Borough,212906
+Barnet,London Borough,395869
+Bexley,London Borough,248287
+Brent,London Borough,329771
+Bromley,London Borough,332336
+Croydon,London Borough,386710
+Ealing,London Borough,341806
+Enfield,London Borough,333794
+Greenwich,London Borough,287942
+Harrow,London Borough,251160
+Havering,London Borough,259552
+Hillingdon,London Borough,306870
+Hounslow,London Borough,271523
+Kingston upon Thames,London Borough,177507
+Merton,London Borough,206548
+Redbridge,London Borough,305222
+Richmond upon Thames,London Borough,198019
+Sutton,London Borough,206349
+Waltham Forest,London Borough,276983
+SOUTH EAST,Region,9180135
+Bracknell Forest,Unitary Authority,122549
+Brighton and Hove,Unitary Authority,290885
+Isle of Wight,Unitary Authority,141771
+Medway,Unitary Authority,278556
+Milton Keynes,Unitary Authority,269457
+Portsmouth,Unitary Authority,214905
+Reading,Unitary Authority,161780
+Slough,Unitary Authority,149539
+Southampton,Unitary Authority,252520
+West Berkshire,Unitary Authority,158450
+Windsor and Maidenhead,Unitary Authority,151422
+Wokingham,Unitary Authority,171119
+Buckinghamshire,Unitary Authority,543973
+East Sussex,County,557229
+Eastbourne,Non-metropolitan District,103745
+Hastings,Non-metropolitan District,92661
+Lewes,Non-metropolitan District,103268
+Rother,Non-metropolitan District,96080
+Wealden,Non-metropolitan District,161475
+Hampshire,County,1382542
+Basingstoke and Deane,Non-metropolitan District,176582
+East Hampshire,Non-metropolitan District,122308
+Eastleigh,Non-metropolitan District,133584
+Fareham,Non-metropolitan District,116233
+Gosport,Non-metropolitan District,84838
+Hart,Non-metropolitan District,97073
+Havant,Non-metropolitan District,126220
+New Forest,Non-metropolitan District,180086
+Rushmoor,Non-metropolitan District,94599
+Test Valley,Non-metropolitan District,126160
+Winchester,Non-metropolitan District,124859
+Kent,County,1581555
+Ashford,Non-metropolitan District,130032
+Canterbury,Non-metropolitan District,165394
+Dartford,Non-metropolitan District,112606
+Dover,Non-metropolitan District,118131
+Folkestone and Hythe,Non-metropolitan District,112996
+Gravesham,Non-metropolitan District,106939
+Maidstone,Non-metropolitan District,171826
+Sevenoaks,Non-metropolitan District,120750
+Swale,Non-metropolitan District,150082
+Thanet,Non-metropolitan District,141922
+Tonbridge and Malling,Non-metropolitan District,132153
+Tunbridge Wells,Non-metropolitan District,118724
+Oxfordshire,County,691667
+Cherwell,Non-metropolitan District,150503
+Oxford,Non-metropolitan District,152457
+South Oxfordshire,Non-metropolitan District,142057
+Vale of White Horse,Non-metropolitan District,136007
+West Oxfordshire,Non-metropolitan District,110643
+Surrey,County,1196236
+Elmbridge,Non-metropolitan District,136795
+Epsom and Ewell,Non-metropolitan District,80627
+Guildford,Non-metropolitan District,148998
+Mole Valley,Non-metropolitan District,87245
+Reigate and Banstead,Non-metropolitan District,148748
+Runnymede,Non-metropolitan District,89424
+Spelthorne,Non-metropolitan District,99844
+Surrey Heath,Non-metropolitan District,89305
+Tandridge,Non-metropolitan District,88129
+Waverley,Non-metropolitan District,126328
+Woking,Non-metropolitan District,100793
+West Sussex,County,863980
+Adur,Non-metropolitan District,64301
+Arun,Non-metropolitan District,160758
+Chichester,Non-metropolitan District,121129
+Crawley,Non-metropolitan District,112409
+Horsham,Non-metropolitan District,143791
+Mid Sussex,Non-metropolitan District,151022
+Worthing,Non-metropolitan District,110570
+SOUTH WEST,Region,5624696
+Bath and North East Somerset,Unitary Authority,193282
+"Bournemouth, Christchurch and Poole",Unitary Authority,395331
+"Bristol, City of",Unitary Authority,463377
+Cornwall and Isles of Scilly,Unitary Authority,571802
+Dorset,Unitary Authority,378508
+Isles of Scilly,Unitary Authority,2224
+North Somerset,Unitary Authority,215052
+Plymouth,Unitary Authority,262100
+South Gloucestershire,Unitary Authority,285093
+Swindon,Unitary Authority,222193
+Torbay,Unitary Authority,136264
+Wiltshire,Unitary Authority,500024
+Devon,County,802375
+East Devon,Non-metropolitan District,146284
+Exeter,Non-metropolitan District,131405
+Mid Devon,Non-metropolitan District,82311
+North Devon,Non-metropolitan District,97145
+South Hams,Non-metropolitan District,87004
+Teignbridge,Non-metropolitan District,134163
+Torridge,Non-metropolitan District,68267
+West Devon,Non-metropolitan District,55796
+Gloucestershire,County,637070
+Cheltenham,Non-metropolitan District,116306
+Cotswold,Non-metropolitan District,89862
+Forest of Dean,Non-metropolitan District,86791
+Gloucester,Non-metropolitan District,129128
+Stroud,Non-metropolitan District,119964
+Tewkesbury,Non-metropolitan District,95019
+Somerset,County,562225
+Mendip,Non-metropolitan District,115587
+Sedgemoor,Non-metropolitan District,123178
+Somerset West and Taunton,Non-metropolitan District,155115
+South Somerset,Non-metropolitan District,168345
+WALES,Country,3152879
+Isle of Anglesey,Unitary Authority,70043
+Gwynedd,Unitary Authority,124560
+Conwy,Unitary Authority,117203
+Denbighshire,Unitary Authority,95696
+Flintshire,Unitary Authority,156100
+Wrexham,Unitary Authority,135957
+Powys,Unitary Authority,132435
+Ceredigion,Unitary Authority,72695
+Pembrokeshire,Unitary Authority,125818
+Carmarthenshire,Unitary Authority,188771
+Swansea,Unitary Authority,246993
+Neath Port Talbot,Unitary Authority,143315
+Bridgend,Unitary Authority,147049
+Vale of Glamorgan,Unitary Authority,133587
+Cardiff,Unitary Authority,366903
+Rhondda Cynon Taf,Unitary Authority,241264
+Merthyr Tydfil,Unitary Authority,60326
+Caerphilly,Unitary Authority,181075
+Blaenau Gwent,Unitary Authority,69862
+Torfaen,Unitary Authority,93961
+Monmouthshire,Unitary Authority,94590
+Newport,Unitary Authority,154676
+SCOTLAND,Country,5463300
+Aberdeen City,Council Area,228670
+Aberdeenshire,Council Area,261210
+Angus,Council Area,116200
+Argyll and Bute,Council Area,85870
+City of Edinburgh,Council Area,524930
+Clackmannanshire,Council Area,51540
+Dumfries and Galloway,Council Area,148860
+Dundee City,Council Area,149320
+East Ayrshire,Council Area,122010
+East Dunbartonshire,Council Area,108640
+East Lothian,Council Area,107090
+East Renfrewshire,Council Area,95530
+Falkirk,Council Area,160890
+Fife,Council Area,373550
+Glasgow City,Council Area,633120
+Highland,Council Area,235830
+Inverclyde,Council Area,77800
+Midlothian,Council Area,92460
+Moray,Council Area,95820
+Na h-Eileanan Siar,Council Area,26720
+North Ayrshire,Council Area,134740
+North Lanarkshire,Council Area,341370
+Orkney Islands,Council Area,22270
+Perth and Kinross,Council Area,151950
+Renfrewshire,Council Area,179100
+Scottish Borders,Council Area,115510
+Shetland Islands,Council Area,22920
+South Ayrshire,Council Area,112610
+South Lanarkshire,Council Area,320530
+Stirling,Council Area,94210
+West Dunbartonshire,Council Area,88930
+West Lothian,Council Area,183100
+NORTHERN IRELAND,Country,1893667
+Antrim and Newtownabbey,Local Government District,143504
+Ards and North Down,Local Government District,161725
+"Armagh City, Banbridge and Craigavon",Local Government District,216205
+Belfast,Local Government District,343542
+Causeway Coast and Glens,Local Government District,144838
+Derry City and Strabane,Local Government District,151284
+Fermanagh and Omagh,Local Government District,117397
+Lisburn and Castlereagh,Local Government District,146002
+Mid and East Antrim,Local Government District,139274
+Mid Ulster,Local Government District,148528
+"Newry, Mourne and Down",Local Government District,181368
+Aylesbury Vale,Not sure,199448
+South Bucks,Not sure,70043
+Wycombe,Not sure,174641
