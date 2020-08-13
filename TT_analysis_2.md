@@ -1,10 +1,6 @@
----
-title: "Estimation of incidence and R from local Pillar 1 case data"
-author: "Michelle Kendall, Chris Wymant and Christophe Fraser"
-date: "11/08/2020"
-output: html_document
----
-0
+# Estimation of incidence and R from local Pillar 1 case data
+### Michelle Kendall, Chris Wymant and Christophe Fraser
+
 
 
 This code estimates incidence of new infections and the instantaneous reproduction number R in April-June across Upper Tier Local Authorities of England, as reported in our [preprint](https://www.medrxiv.org/content/10.1101/2020.07.12.20151753v1.article-info).
@@ -280,4 +276,4 @@ nowcast.plot
 ```
 
 For ease of viewing on GitHub we include a static version here:
-![plot of chunk static.plot](nowcast_IoW.png)
+![plot of chunk static.plot](Nowcast_IoW.png)

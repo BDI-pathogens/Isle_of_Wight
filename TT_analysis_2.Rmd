@@ -1,10 +1,6 @@
----
-title: "Estimation of incidence and R from local Pillar 1 case data"
-author: "Michelle Kendall, Chris Wymant and Christophe Fraser"
-date: "11/08/2020"
-output: html_document
----
-0
+# Estimation of incidence and R from local Pillar 1 case data
+### Michelle Kendall, Chris Wymant and Christophe Fraser
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -273,5 +269,5 @@ nowcast.plot
 
 For ease of viewing on GitHub we include a static version here:
 ```{r static.plot, echo=FALSE, fig.retina = NULL}
-knitr::include_graphics("nowcast_IoW.png", dpi=72)
+knitr::include_graphics("Nowcast_IoW.png", dpi=72)
 ```
