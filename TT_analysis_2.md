@@ -24,14 +24,14 @@ From the working directory, fetch the Pillar 1 daily case data:
 
 
 ```r
-dat.UK.p1 <- read_csv("pillar1_case_data.csv")
+dat.UK.p1 <- read_csv("data/pillar1_case_data.csv")
 ```
 
 and the population data:
 
 
 ```r
-population.data <- read.csv("population_by_region.csv", stringsAsFactors = FALSE)
+population.data <- read.csv("data/population_by_region.csv", stringsAsFactors = FALSE)
 ```
 
 
@@ -276,4 +276,4 @@ nowcast.plot
 ```
 
 For ease of viewing on GitHub we include a static version here:
-![plot of chunk static.plot](Nowcast_IoW.png)
+![](figure/Nowcast_IoW.png)

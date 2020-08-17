@@ -24,13 +24,13 @@ library(ggplot2)
 From the working directory, fetch the Pillar 1 daily case data:
 
 ```{r load.data, message=FALSE}
-dat.UK.p1 <- read_csv("pillar1_case_data.csv")
+dat.UK.p1 <- read_csv("data/pillar1_case_data.csv")
 ```
 
 and the population data:
 
 ```{r load.pop.data}
-population.data <- read.csv("population_by_region.csv", stringsAsFactors = FALSE)
+population.data <- read.csv("data/population_by_region.csv", stringsAsFactors = FALSE)
 ```
 
 
@@ -269,5 +269,5 @@ nowcast.plot
 
 For ease of viewing on GitHub we include a static version here:
 ```{r static.plot, echo=FALSE, fig.retina = NULL}
-knitr::include_graphics("Nowcast_IoW.png", dpi=72)
+knitr::include_graphics("figure/Nowcast_IoW.png", dpi=72)
 ```
