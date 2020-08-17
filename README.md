@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/286769991.svg)](https://zenodo.org/badge/latestdoi/286769991)
+
 # [A preliminary analysis of epidemiological trends on the Isle of Wight after the launch of the Test and Trace programme](https://www.medrxiv.org/content/10.1101/2020.07.12.20151753v1.article-info)
  
 The code in this repository reproduces the analysis reported in [this paper](https://www.medrxiv.org/content/10.1101/2020.07.12.20151753v1.article-info).
