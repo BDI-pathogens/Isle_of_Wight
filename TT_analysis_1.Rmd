@@ -21,8 +21,6 @@ library(tidyverse)
 library(RColorBrewer)
 ```
 
-## Setup
-
 ### Load data
 
 From the working directory, fetch the daily case data:
@@ -40,9 +38,9 @@ and the population size data:
 population.data <- read.csv("data/population_by_region.csv", stringsAsFactors = FALSE)
 ```
 
-### Cleaning data
+### Extract data
 
-Extract data for England and Isle of Wight (Pillar 1)
+Extract relevant data
 
 ```{r cleaning}
 # Extract relevant data:
@@ -57,6 +55,9 @@ dat.Eng.both.clean$Date <- as.Date(dat.Eng.both.clean$Date) # restore "date" pro
 
 
 ## Analysis
+
+
+### Combined pillars data
 
 Calculate incidence for each area and overall:
 
@@ -155,7 +156,7 @@ minusloglik <- function(i0, r, start.date, incidence.dates, incidence.counts) {
 }
 ```
 
-Get Maximum-Likelihood estimates:
+Get Maximum-Likelihood estimates for the growth rate r:
 
 ```{r analysis.both.mle, warning=FALSE}
 fit.mle.IoW.both <- mle(minusloglik, 
@@ -175,6 +176,7 @@ summary(fit.mle.Eng.both)
 
 ```
 
+### Pillar 1 data
 
 Similarly for Pillar 1 alone:
 ```{r analysis.p1.1, message=FALSE, warning=FALSE}
@@ -234,6 +236,8 @@ Eng.p1.linelist <- Eng.p1.linelist[-1]
 
 ```
 
+### Pillar 2 data
+
 And Pillar 2:
 ```{r analysis.p2.1, message=FALSE, warning=FALSE}
 dat.IoW.p2$specimen_date <- as.Date(as.character(dat.IoW.p2$specimen_date), "%d-%b-%y")
@@ -257,11 +261,7 @@ IoW.p2.linelist <- IoW.p2.linelist[-1]
 UK.p2.linelist <- UKPillar2$Date.of.activity[1]
 for(row in 1:nrow(UKPillar2)){
   if(UKPillar2$Daily.number.of.positive.cases[row]>0){
-    # this is faster:
-    UK.p2.linelist <- c(UK.p2.linelist, rep(UKPillar2$Date.of.activity[row], UKPillar2$Daily.number.of.positive.cases[row]))
-    # for(case in 1:UKPillar2$Daily.number.of.positive.cases[row]){
-    #   UK.linelist <- c(UK.linelist, UKPillar2$Date.of.activity[row])
-    # }
+   UK.p2.linelist <- c(UK.p2.linelist, rep(UKPillar2$Date.of.activity[row], UKPillar2$Daily.number.of.positive.cases[row]))
   }
 }
 UK.p2.linelist <- UK.p2.linelist[-1]
@@ -332,5 +332,295 @@ fit.mle.UK.p2 <- mle(minusloglik,
                                 incidence.dates=UK.p2.incidence$dates,
                                 incidence.counts=UK.p2.incidence$counts))
 summary(fit.mle.UK.p2)
+```
+
+Plot these results for comparison:
+```{r IoW.vs.national}
+
+# function to convert from growth rate r to reproduction number R
+alpha <- 6.6
+beta <- 1.2
+R <- function(r) ((beta + r)/beta)^alpha
+
+# gather results, converting r to R:
+results.for.plotting <- cbind.data.frame(
+  "Where" =c(rep("Isle of Wight",3), rep("National",3)),
+  "Pillar" = c(1,2,"combined",1,2,"combined"),
+  "R" = c(R(attributes(fit.mle.IoW.p1)$coef[[2]]),
+          R(attributes(fit.mle.IoW.p2)$coef[[2]]),
+          R(attributes(fit.mle.IoW.both)$coef[[2]]), 
+          R(attributes(fit.mle.Eng.p1)$coef[[2]]),
+          R(attributes(fit.mle.UK.p2)$coef[[2]]),
+          R(attributes(fit.mle.Eng.both)$coef[[2]])
+          ),
+  "lower" = c(R(attributes(fit.mle.IoW.p1)$coef[[2]] - attributes(summary(fit.mle.IoW.p1))$coef[[4]]),
+              R(attributes(fit.mle.IoW.p2)$coef[[2]] - attributes(summary(fit.mle.IoW.p2))$coef[[4]]),
+              R(attributes(fit.mle.IoW.both)$coef[[2]] - attributes(summary(fit.mle.IoW.both))$coef[[4]]),
+              R(attributes(fit.mle.Eng.p1)$coef[[2]] - attributes(summary(fit.mle.Eng.p1))$coef[[4]]),
+              R(attributes(fit.mle.UK.p2)$coef[[2]] - attributes(summary(fit.mle.UK.p2))$coef[[4]]),
+              R(attributes(fit.mle.Eng.both)$coef[[2]] - attributes(summary(fit.mle.Eng.both))$coef[[4]])
+              ),
+  "upper" = c(R(attributes(fit.mle.IoW.p1)$coef[[2]] + attributes(summary(fit.mle.IoW.p1))$coef[[4]]),
+              R(attributes(fit.mle.IoW.p2)$coef[[2]] + attributes(summary(fit.mle.IoW.p2))$coef[[4]]),
+              R(attributes(fit.mle.IoW.both)$coef[[2]] + attributes(summary(fit.mle.IoW.both))$coef[[4]]),
+              R(attributes(fit.mle.Eng.p1)$coef[[2]] + attributes(summary(fit.mle.Eng.p1))$coef[[4]]),
+              R(attributes(fit.mle.UK.p2)$coef[[2]] + attributes(summary(fit.mle.UK.p2))$coef[[4]]),
+              R(attributes(fit.mle.Eng.both)$coef[[2]] + attributes(summary(fit.mle.Eng.both))$coef[[4]])
+              )
+)
+
+ggplot(results.for.plotting, aes(x=Where, y=R, fill=Pillar)) + 
+  geom_bar(stat="identity", color="black", 
+           position=position_dodge(0.9)) +
+  geom_errorbar(aes(ymin=lower, ymax=upper), width=.4,
+                position=position_dodge(.9)) +
+  scale_fill_manual(values=brewer.pal(6, "Set2")[1:3]) +
+  xlab("") +
+  ylim(0,1) +
+  theme_bw(base_size = 16)
+
+
+```
+
+We use likelihood ratio tests to obtain p-values for the differences in R seen between the Isle of Wight and the national level.
+
+```{r lrtests, warning=FALSE, message=FALSE}
+# prepare function for Maximum-likelihood estimation where we allow r to vary between the two datasets:
+minusloglik.both.different.rs <- function(i0_1, i0_2, r_1, r_2, start.date, incidence.dates_1, incidence.dates_2, incidence.counts_1, incidence.counts_2) {
+  ll_1 <- 0
+  for(row in 1:length(incidence.dates_1)){
+    model_1 <- i0_1*exp(-r_1*as.numeric(difftime(start.date,incidence.dates_1[row],units=c("days"))))
+    ll_1 <- ll_1 + model_1 - incidence.counts_1[row]*log(model_1)
+  }
+  ll_2 <- 0
+  for(row in 1:length(incidence.dates_2)){
+    model_2 <- i0_2*exp(-r_2*as.numeric(difftime(start.date,incidence.dates_2[row],units=c("days"))))
+    ll_2 <- ll_2 + model_2 - incidence.counts_2[row]*log(model_2)
+  }
+  return(ll_1 + ll_2)
+}
+
+#... and where we force r to be the same for both
+minusloglik.both.same.r <- function(i0_1, i0_2, r, start.date, incidence.dates_1, incidence.dates_2, incidence.counts_1, incidence.counts_2) {
+  ll_1 <- 0
+  for(row in 1:length(incidence.dates_1)){
+    model_1 <- i0_1*exp(-r*as.numeric(difftime(start.date,incidence.dates_1[row],units=c("days"))))
+    ll_1 <- ll_1 + model_1 - incidence.counts_1[row]*log(model_1)
+  }
+  ll_2 <- 0
+  for(row in 1:length(incidence.dates_2)){
+    model_2 <- i0_2*exp(-r*as.numeric(difftime(start.date,incidence.dates_2[row],units=c("days"))))
+    ll_2 <- ll_2 + model_2 - incidence.counts_2[row]*log(model_2)
+  }
+  return(ll_1 + ll_2)
+}
+
+# Pillar 1:
+fit.mle.both.different.rs.p1 <- mle(minusloglik.both.different.rs, 
+                       start=list(i0_1=attributes(fit.mle.Eng.p1)$coef[[1]],
+                                  i0_2=attributes(fit.mle.IoW.p1)$coef[[1]],
+                                  r_1=attributes(fit.mle.Eng.p1)$coef[[2]],
+                                  r_2=attributes(fit.mle.IoW.p1)$coef[[2]]), 
+                       fixed=list(start.date=start.date.Eng.p1,
+                                  incidence.dates_1=Eng.p1.incidence$dates,
+                                  incidence.dates_2=IoW.p1.incidence$dates,
+                                  incidence.counts_1=Eng.p1.incidence$counts,
+                                  incidence.counts_2=IoW.p1.incidence$counts)
+)
+summary(fit.mle.both.different.rs.p1)
+
+# versus
+fit.mle.both.same.r.p1 <- mle(minusloglik.both.same.r, 
+                                 start=list(i0_1=attributes(fit.mle.Eng.p1)$coef[[1]],
+                                            i0_2=attributes(fit.mle.IoW.p1)$coef[[1]],
+                                            r=attributes(fit.mle.IoW.p1)$coef[[2]]), 
+                                 fixed=list(start.date=start.date.Eng.p1,
+                                            incidence.dates_1=Eng.p1.incidence$dates,
+                                            incidence.dates_2=IoW.p1.incidence$dates,
+                                            incidence.counts_1=Eng.p1.incidence$counts,
+                                            incidence.counts_2=IoW.p1.incidence$counts)
+)
+summary(fit.mle.both.same.r.p1)
+
+# likelihood ratio test
+ll.diff.p1 <- attributes(fit.mle.both.different.rs.p1)$details$value - attributes(fit.mle.both.same.r.p1)$details$value
+1 - pchisq(-2*ll.diff.p1, df=1) # p-value for the Pillar 1 difference
+
+# Pillar 2
+fit.mle.both.different.rs.p2 <- mle(minusloglik.both.different.rs, 
+                                    start=list(i0_1=attributes(fit.mle.UK.p2)$coef[[1]],
+                                               i0_2=attributes(fit.mle.IoW.p2)$coef[[1]],
+                                               r_1=attributes(fit.mle.UK.p2)$coef[[2]],
+                                               r_2=attributes(fit.mle.IoW.p2)$coef[[2]]), 
+                                    fixed=list(start.date=start.date.UK.p2,
+                                               incidence.dates_1=UK.p2.incidence$dates,
+                                               incidence.dates_2=IoW.p2.incidence$dates,
+                                               incidence.counts_1=UK.p2.incidence$counts,
+                                               incidence.counts_2=IoW.p2.incidence$counts)
+)
+summary(fit.mle.both.different.rs.p2)
+
+# versus
+fit.mle.both.same.r.p2 <- mle(minusloglik.both.same.r, 
+                              start=list(i0_1=attributes(fit.mle.UK.p2)$coef[[1]],
+                                         i0_2=attributes(fit.mle.IoW.p2)$coef[[1]],
+                                         r=attributes(fit.mle.IoW.p2)$coef[[2]]), 
+                              fixed=list(start.date=start.date.UK.p2,
+                                         incidence.dates_1=UK.p2.incidence$dates,
+                                         incidence.dates_2=IoW.p2.incidence$dates,
+                                         incidence.counts_1=UK.p2.incidence$counts,
+                                         incidence.counts_2=IoW.p2.incidence$counts)
+)
+summary(fit.mle.both.same.r.p2)
+
+# likelihood ratio test
+ll.diff.p2 <- attributes(fit.mle.both.different.rs.p2)$details$value - attributes(fit.mle.both.same.r.p2)$details$value
+1 - pchisq(-2*ll.diff.p2, df=1) # p-value for the Pillar 2 difference
+
+# Combined pillars
+fit.mle.both.different.rs.both <- mle(minusloglik.both.different.rs, 
+                                    start=list(i0_1=attributes(fit.mle.Eng.both)$coef[[1]],
+                                               i0_2=attributes(fit.mle.IoW.both)$coef[[1]],
+                                               r_1=attributes(fit.mle.Eng.both)$coef[[2]],
+                                               r_2=attributes(fit.mle.IoW.both)$coef[[2]]), 
+                                    fixed=list(start.date=start.date.Eng.both,
+                                               incidence.dates_1=Eng.both.incidence$dates,
+                                               incidence.dates_2=IoW.both.incidence$dates,
+                                               incidence.counts_1=Eng.both.incidence$counts,
+                                               incidence.counts_2=IoW.both.incidence$counts)
+)
+summary(fit.mle.both.different.rs.both)
+
+# versus
+fit.mle.both.same.r.both <- mle(minusloglik.both.same.r, 
+                              start=list(i0_1=attributes(fit.mle.Eng.both)$coef[[1]],
+                                         i0_2=attributes(fit.mle.IoW.both)$coef[[1]],
+                                         r=attributes(fit.mle.IoW.both)$coef[[2]]), 
+                              fixed=list(start.date=start.date.Eng.both,
+                                         incidence.dates_1=Eng.both.incidence$dates,
+                                         incidence.dates_2=IoW.both.incidence$dates,
+                                         incidence.counts_1=Eng.both.incidence$counts,
+                                         incidence.counts_2=IoW.both.incidence$counts)
+)
+summary(fit.mle.both.same.r.both)
+
+# likelihood ratio test 
+ll.diff.both <- attributes(fit.mle.both.different.rs.both)$details$value - attributes(fit.mle.both.same.r.both)$details$value
+1 - pchisq(-2*ll.diff.both, df=1) # p-value for the combined pillars difference 
+
+```
+
+### Comparing R before and after the Test and Trace launch
+
+Finally, using the Pillar 1 data we estimate R in each Upper Tier Local Authority before and after the Test and Trace launch:
+
+```{r p1.pre, warning=FALSE, message=FALSE}
+r.pre.TT <- sapply(areas.alphabetical, function(area) {
+  dat.this.area <- dat.UK.p1 %>% filter(Area == area)
+  
+  dat.this.area$Incidence <- rep(0,nrow(dat.this.area)) 
+  dat.this.area$Incidence[1] <- dat.this.area$TotalCases[1]
+  for(row in 2:nrow(dat.this.area)) {
+    dat.this.area$Incidence[row] <- dat.this.area$TotalCases[row] - dat.this.area$TotalCases[row-1]
+  }
+  
+  this.area.p1.linelist <- dat.this.area$Date[1]
+  for(row in 1:nrow(dat.this.area)){
+    if(dat.this.area$Incidence[row]>0){
+      for(case in 1:dat.this.area$Incidence[row]){
+        this.area.p1.linelist <- c(this.area.p1.linelist, dat.this.area$Date[row])
+      }
+    }
+  }
+  this.area.p1.linelist <- this.area.p1.linelist[-1]
+  
+  this.area.incidence <- incidence(this.area.p1.linelist, 
+                                first_date = as.Date("2020-03-01"),
+                                last_date = as.Date("2020-05-04"),
+                                standard = FALSE)
+  
+  fit.mle.this.area <- mle(minusloglik,
+                       start=list(i0=10, r=-0.01), 
+                       fixed=list(start.date=start.date.Eng.p1,
+                                  incidence.dates=this.area.incidence$dates,
+                                  incidence.counts=this.area.incidence$counts))
+  
+  c(mean=attributes(fit.mle.this.area)$coef[[2]], sd =attributes(summary(fit.mle.this.area))$coef[[4]])
+})
+
+# convert from growth rate r to reproduction number R
+R.pre.TT <- cbind.data.frame("Area" = areas.alphabetical,
+                             "R" = R(r.pre.TT["mean",]),
+                             "IoW" = rep(FALSE, length(areas.alphabetical)))
+R.pre.TT[which(R.pre.TT[,"Area"] == "Isle of Wight"), "IoW"] <- TRUE # "is it the Isle of Wight" column for plotting
+
+head(R.pre.TT)
+```
+
+```{r p1.post, warning=FALSE, message=FALSE}
+r.post.TT <- sapply(areas.alphabetical[-104], function(area) { # Rutland causes an error (too few cases)
+  dat.this.area <- dat.UK.p1 %>% filter(Area == area)
+  
+  dat.this.area$Incidence <- rep(0,nrow(dat.this.area)) 
+  dat.this.area$Incidence[1] <- dat.this.area$TotalCases[1]
+  for(row in 2:nrow(dat.this.area)) {
+    dat.this.area$Incidence[row] <- dat.this.area$TotalCases[row] - dat.this.area$TotalCases[row-1]
+  }
+  
+  this.area.p1.linelist <- dat.this.area$Date[1]
+  for(row in 1:nrow(dat.this.area)){
+    if(dat.this.area$Incidence[row]>0){
+      for(case in 1:dat.this.area$Incidence[row]){
+        this.area.p1.linelist <- c(this.area.p1.linelist, dat.this.area$Date[row])
+      }
+    }
+  }
+  this.area.p1.linelist <- this.area.p1.linelist[-1]
+  
+  this.area.incidence <- incidence(this.area.p1.linelist, 
+                                   first_date = start.date.Eng.p1,
+                                   last_date = end.date.Eng.p1,
+                                   standard = FALSE)
+  
+  fit.mle.this.area <- mle(minusloglik,
+                           start=list(i0=10, r=-0.01), 
+                           fixed=list(start.date=start.date.Eng.p1,
+                                      incidence.dates=this.area.incidence$dates,
+                                      incidence.counts=this.area.incidence$counts))
+  
+  c(mean=attributes(fit.mle.this.area)$coef[[2]], sd =attributes(summary(fit.mle.this.area))$coef[[4]])
+})
+
+# convert from growth rate r to reproduction number R
+R.post.TT <- cbind.data.frame("Area" = areas.alphabetical[-104],
+                              "R" = R(r.post.TT["mean",]),
+                              "IoW" = rep(FALSE, length(areas.alphabetical) - 1))
+R.post.TT[which(R.post.TT[,"Area"] == "Isle of Wight"), "IoW"] <- TRUE # "is it the Isle of Wight" column for plotting
+
+# use previous estimate for Isle of Wight, which has a different start date (earlier launch of TT)
+R.post.TT[which(R.post.TT[,"Area"] == "Isle of Wight"),"R"] <- R(attributes(fit.mle.IoW.p1)$coef[[2]])
+
+head(R.post.TT)
+
+```
+
+Plot these values as histograms with the Isle of Wight highlighted in red:
+
+```{r plot.histograms}
+ggplot(R.pre.TT, aes(fill=IoW)) + 
+  geom_histogram(aes(R), bins=50) + 
+  xlab("R") +
+  ylab("Frequency") +
+  scale_fill_manual(values=c(brewer.pal(6, "Set1")[[2]],"red")) +
+  guides(fill=FALSE) +
+  theme_bw(base_size = 16)
+
+ggplot(R.post.TT, aes(fill=IoW)) + 
+  geom_histogram(aes(R), bins=50) + 
+  xlab("R") +
+  ylab("Frequency") +
+  scale_fill_manual(values=c(brewer.pal(6, "Set1")[[2]],"red")) +
+  guides(fill=FALSE) +
+  theme_bw(base_size = 16)
 ```
 
