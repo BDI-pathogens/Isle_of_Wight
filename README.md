@@ -10,12 +10,8 @@ Using `pillar1_case_data.csv` and `population_by_region.csv`, the code in [`TT_a
 
 The code in [`IoW_synthetic_control.do`](https://github.com/BDI-pathogens/Isle_of_Wight/blob/master/IoW_synthetic_control.do) uses these estimates of R (saved in `time_series_R.csv`) to perform the synthetic control analysis.
 
-Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+[![CC BY 4.0][cc-by-image]][cc-by] This work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by]. 
 
-This work is licensed under a
-[Creative Commons Attribution 4.0 International License][cc-by].
-
-[![CC BY 4.0][cc-by-image]][cc-by]
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
