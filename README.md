@@ -1,8 +1,8 @@
 [![DOI](https://zenodo.org/badge/286769991.svg)](https://zenodo.org/badge/latestdoi/286769991)
 
-# [A preliminary analysis of epidemiological trends on the Isle of Wight after the launch of the Test and Trace programme](https://www.medrxiv.org/content/10.1101/2020.07.12.20151753v1.article-info)
+# [Epidemiological changes on the Isle of Wight after the launch of the NHS Test and Trace programme: a preliminary analysis](http://www.thelancet.com/journals/landig/article/PIIS2589-7500(20)30241-7/fulltext)
  
-The code in this repository reproduces the analysis reported in [this paper](https://www.medrxiv.org/content/10.1101/2020.07.12.20151753v1.article-info).
+The code in this repository reproduces the analysis reported in [this paper](http://www.thelancet.com/journals/landig/article/PIIS2589-7500(20)30241-7/fulltext).
 
 Using separate and combined pillars datasets, the code in [`TT_anaylsis_1.md`](https://github.com/BDI-pathogens/Isle_of_Wight/blob/master/TT_analysis_1.md) performs a Maximum-Likelihood estimation of R over fixed time periods before and after the Test and Trace programme launches.
 

@@ -1,6 +1,6 @@
-// Code to perform Synthetic control analysis for "COVID-19 incidence and R 
-// decreased on the Isle of Wight after the launch of the Test, Track and 
-//Isolate programme" Kendell et al 2020
+// Code to perform Synthetic control analysis for "Epidemiological changes on the Isle of
+// Wight after the launch of the NHS Test and Trace programme: a preliminary analysis", 
+// Kendall et al., The Lancet Digital Health, 2020
 
 // Date: 11/07/2020
 // Author: Luke Milsom

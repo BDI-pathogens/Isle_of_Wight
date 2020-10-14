@@ -3,7 +3,7 @@
 
 
 
-This code performs a Maximum-Likelihood estimation of R over fixed time periods before and after the Test and Trace programme, as reported in our [preprint](https://www.medrxiv.org/content/10.1101/2020.07.12.20151753v1.article-info).
+This code performs a Maximum-Likelihood estimation of R over fixed time periods before and after the Test and Trace programme, as reported in our [paper](https://doi.org/10.1016/S2589-7500(20)30241-7).
 
 ## Setup
 

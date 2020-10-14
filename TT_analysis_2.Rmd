@@ -5,7 +5,7 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This code estimates incidence of new infections and the instantaneous reproduction number R in April-June across Upper Tier Local Authorities of England, as reported in our [preprint](https://www.medrxiv.org/content/10.1101/2020.07.12.20151753v1.article-info).
+This code estimates incidence of new infections and the instantaneous reproduction number R in April-June across Upper Tier Local Authorities of England, as reported in our [paper](https://doi.org/10.1016/S2589-7500(20)30241-7).
 
 ## Setup
 
